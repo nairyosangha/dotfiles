@@ -1,0 +1,49 @@
+#!/bin/sh
+
+#if [ -e "$BSPWM_STATE" ]; then
+#	induce_rules "$BSPWM_STATE"
+#	rm "$BSPWM_STATE"
+#	rm "$BSPWM_STATE.tmp"
+#else
+	bspwm_updateMonitors.sh
+	#if (( "$(xrandr --listactivemonitors | head -n 1 | cut -d" " -f2)" == 1 ))
+	#then
+	#	bspc monitor -d I II III IV V VI VII VIII IX X
+	#else
+	#	bspc monitor -d I II III IV V VI
+	#	bspc monitor HDMI-1 -d VII VIII IX X
+	#fi
+
+	bspc config border_width         2
+	bspc config window_gap           5
+
+	bspc config split_ratio			0.55
+	bspc config borderless_monocle  	true
+	bspc config gapless_monocle     	false
+	bspc config top_monocle_padding 	20
+	bspc config bottom_monocle_padding 	20
+	screen_width="$(xdotool getdisplaygeometry | cut -d" " -f2)"
+	side_padding="$(echo "$screen_width * 0.15" | bc -l)"
+	bspc config right_monocle_padding 	$side_padding
+	bspc config left_monocle_padding 	$side_padding
+	bspc config click_to_focus		any
+
+	#bspc config external_rules_command "$(which external_rules)"
+	bspc rule -a Gimp desktop='^8' state=floating follow=on
+	bspc rule -a Pavucontrol  state=floating follow=on
+	bspc rule -a Zathura state=tiled follow=on
+	bspc rule -a libreoffice-writer state=tiled follow=on
+	bspc rule -a Steam  state=tiled follow=off
+	bspc rule -a keepassxc:* state=floating follow=on
+	bspc rule -a Waterfox desktop='^2'
+	bspc rule -a Pulseeffects state=floating follow=on
+	bspc rule -a Zathura state=tiled follow=on
+	bspc rule -a Vivaldi-stable desktop='^2' follow=on
+	bspc rule -a discord desktop='^3' follow=on
+	bspc rule -a mpv desktop='^0' state=fullscreen follow=on
+
+
+	dunst &
+	acpid &
+	scratchpad_util
+#fi

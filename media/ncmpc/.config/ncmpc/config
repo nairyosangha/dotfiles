@@ -1,0 +1,20 @@
+enable-mouse = on
+library-page-tags = albumartist
+welcome-screen-list = no
+visible-bitrate = yes
+set-xterm-title = yes
+
+#list-format = "[%track%|(track n/a)] #| [%album%]#: [%artist%|(artist n/a)] - [%title%|(title n/a)]"
+list-format = "[%album%]#: [%artist%|(artist n/a)] - [%title%|(title n/a)]"
+
+color background = none
+color title = /none
+color title-bold = /none
+color line = 66
+color list-bold = /none
+color progressbar = 66/black
+color progressbar-background = white/black
+color status-state = yellow/none
+color status-song = yellow/none
+color status-time = yellow/none
+

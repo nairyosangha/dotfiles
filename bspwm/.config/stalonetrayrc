@@ -1,0 +1,22 @@
+# vim:filetype=config:tw=80:et
+# example file in /etc/stalonetrayrc
+
+decorations none        # decspec are: all, title, border, none
+dockapp_mode none
+fuzzy_edges 0           # can be from 0 (disabled) to 3; this setting works
+grow_gravity SE
+icon_gravity SE
+log_level err
+no_shrink true
+parent_bg false
+scrollbars horizontal
+skip_taskbar true
+sticky true
+tint_color black
+tint_level 0
+transparent    false
+vertical false
+window_layer top
+window_strut auto
+window_type dock        # desktop, dock, normal, toolbar, utility
+xsync false

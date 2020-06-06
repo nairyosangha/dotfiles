@@ -1,0 +1,19 @@
+set menu-complete-display-prefix on
+set mark-symlinked-directories on
+set show-all-if-ambiguous on
+set colored-completion-prefix on
+set colored-stats on
+set completion-ignore-case on
+set completion-map-case on
+set match-hidden-files off
+
+# vi mode settings
+set editing-mode vi
+set keymap vi-insert
+set show-mode-in-prompt on
+set vi-ins-mode-string \1\e[5 q\2
+set vi-cmd-mode-string \1\e[1 q\2
+
+$if Bash
+	Space: magic-space
+$endif

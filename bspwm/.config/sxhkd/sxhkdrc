@@ -1,0 +1,243 @@
+#
+# wm independent hotkeys
+#
+
+
+# terminal emulator
+super + Return
+	urxvtc
+
+# program launcher
+super + space
+	rofi -show run
+
+super + shift + {o,i,u}
+	bspc node -l {below, above, normal}
+
+super + shift + Tab
+	rofi -show window
+
+super + {_,shift} + n
+	urxvtc -e {~/.scripts/queryRemoteServer.sh ncmpc, /usr/bin/ncmpc -h pi}
+
+super + ctrl + n
+	webclient
+
+
+
+super + shift + a
+	if pgrep pavucontrol; then \
+		pkill pavucontrol; \
+	else \
+		pavucontrol; \
+	fi
+
+super + alt + shift + a
+	if pgrep pulseeffects; then \
+		pkill pulseeffects; \
+	else \
+		pulseeffects; \
+	fi
+
+# make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd
+
+
+alt + Escape
+	betterlockscreen -l dim
+
+alt + n
+	switch_network.sh
+
+#
+# bspwm hotkeys
+#
+
+# quit bspwm normally
+#super + alt + {_,shift + }Escape
+#	{bspc wm -d > "$BSPWM_STATE.tmp"; extract_canvas "$BSPWM_STATE.tmp" > "$BSPWM_STATE"; bspc quit, \
+#	bspc quit 1}
+
+
+super + alt + Escape
+	bspc quit
+		
+
+# close and kill
+super + {_,shift + }w
+	bspc node -{c,k}
+
+# alternate between the tiled and monocle layout
+super + m
+	bspc desktop -l next
+
+# Send focused node to preselected node
+super + y
+	bspc node "$(bspc query -N -n)" -n 'newest.!automatic.local'
+
+# send the newest marked node to the newest preselected node
+#super + y
+#	bspc node newest.marked.local -n newest.!automatic.local
+
+# swap the current node and the biggest node
+super + g
+	bspc node -s biggest
+
+# switch between vertical and horizontal tiling
+alt + {_,shift} + r
+	bspc node '@parent' -R {90,-90}
+
+# Follow mouse pointer focus
+alt + p
+	bspc config focus_follows_pointer toggle
+
+#
+# state/flags
+#
+
+# set the window state
+super + {t,shift + t,s,f}
+	bspc node -t {tiled,pseudo_tiled,floating,~fullscreen}
+
+# set the node flags
+super + ctrl + {m,x,y,z}
+	bspc node -g {marked,locked,sticky,private}
+
+#
+# focus/swap
+#
+
+# focus the node in the given direction
+super + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+
+# focus the node for the given path jump
+super + {p,b,comma,period}
+	bspc node -f @{parent,brother,first,second}
+
+# focus the next/previous node in the current desktop
+super + {_,shift + }c
+	bspc node -f {next,prev}.local
+
+# focus the next/previous desktop in the current monitor
+super + bracket{left,right}
+	bspc desktop -f {prev,next}.local
+
+# focus the last node/desktop
+super + {grave,Tab}
+	bspc {node,desktop} -f last
+
+# focus the older or newer node in the focus history
+super + {o,i}
+	bspc wm -h off; \
+	bspc node {older,newer} -f; \
+	bspc wm -h on
+
+# focus or send to the given desktop
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+#
+# preselect
+#
+
+# preselect the direction
+super + ctrl + {h,j,k,l}
+	bspc node -p {west,south,north,east}
+
+# preselect the ratio
+super + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+# cancel the preselection for the focused node
+super + ctrl + space
+	bspc node -p cancel
+
+# cancel the preselection for the focused desktop
+super + ctrl + shift + space
+	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+#
+# move/resize
+#
+
+# Resize window by moving the splitline 
+super + alt + {h,j,k,l}
+	resize_win {left, down, up, right}
+
+# move a floating window
+super + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# balance/equalize the selected node, making all nodes within the selection occupy the same amount of space / their default space
+super + shift + {b,e}
+	if bspc query -N -n 'focused.window' &>/dev/null; then \
+		bspc node '@/' {-B,-E}; \
+	else \
+		bspc node {-B,-E}; \
+	fi
+
+# circulate nodes on current desktop forward or backward
+alt + {_,shift} + Tab
+	bspc node '@/' -C {forward, backward}
+
+# snap floating window to position
+super + x ; k ; {h,l,k}
+	snapWin.sh {tl,tr,t}
+super + x ; c ; {h,l,c}
+	snapWin.sh {l,r,c}
+super + x ; j ; {h,l,j}
+	snapWin.sh {bl,br,b}
+
+#
+# Scratchpad Commands
+#
+
+# Toggle hidden terminals
+super + {d,r,z,a}
+	xdo toggle -N URxvt -n {scratch,files,desktop,trackma}
+
+# Toggle touchpad
+ctrl + alt + k
+	xinput --{disable,enable} 15
+
+# Take screenshots
+{_,super, shift}  + @Print
+	fileName="$(date +%Y-%m-%d_%H:%M:%S).png"; \
+	maim -u -f png -m 4 {_,-s, -i $(xdotool getactivewindow)} | tee \
+		>(xclip -i -selection clipboard -t image/png) \
+		> ~/Pictures/screenshots/"$fileName"; \
+	if ! [[ -s ~/Pictures/screenshots/"$fileName" ]]; then rm ~/Pictures/screenshots/"$fileName"; fi
+
+#
+# XF86 Keys
+# Use xev to find the XF86 names
+super + ^248
+	~/.scripts/audioVol toggle
+XF86AudioMute 
+	~/.scripts/audioVol toggle
+XF86AudioLowerVolume
+	~/.scripts/audioVol down
+XF86AudioRaiseVolume
+	~/.scripts/audioVol up
+XF86AudioNext
+	queryRemoteServer.sh mpc next
+XF86AudioPrev
+	queryRemoteServer.sh mpc prev
+XF86AudioStop
+	queryRemoteServer.sh mpc stop
+XF86AudioPlay
+	queryRemoteServer.sh mpc toggle
+XF86TouchpadToggle
+	toggleTouchpad.sh
+XF86ScreenSaver
+	DISPLAY=:0 xset dpms force off
+XF86MonBrightnessDown
+	sudo ~/.scripts/brightness_down.sh
+XF86MonBrightnessUp
+	sudo ~/.scripts/brightness_up.sh
+XF86KbdBrightnessDown
+	sudo ~/.scripts/kbd_brightness_down.sh
+XF86KbdBrightnessUp
+	sudo ~/.scripts/kbd_brightness_up.sh

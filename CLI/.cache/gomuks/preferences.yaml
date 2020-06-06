@@ -1,0 +1,10 @@
+hide_user_list: false
+hide_room_list: false
+bare_message_view: false
+disable_images: true
+disable_typing_notifs: false
+disable_emojis: false
+disable_markdown: false
+disable_html: false
+disable_downloads: false
+disable_notifications: false

@@ -1,0 +1,29 @@
+##cool lain guy's colors
+#set recolor-darkcolor		"#a19782"
+#set recolor-lightcolor		"#0b0806"
+
+set recolor-darkcolor		"#badeb0"
+set recolor-darkcolor		"#a1a087"
+#set recolor-lightcolor		"#070a06"
+
+set recolor			false
+set recolor-keephue		false
+set recolor-reverse-video 	false
+
+set highlight-transparency	0.3
+
+set n-completion-items 		10
+
+set guioptions			"sv"
+
+set page-padding		0
+
+set inputbar-bg
+set inputbar-fg
+
+set show-v-scrollbar		false
+set selection-clipboard		"clipboard"
+set incremental-search		true
+
+##MAPPING
+map <S-s> recolor

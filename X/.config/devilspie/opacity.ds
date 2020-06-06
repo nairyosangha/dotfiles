@@ -1,0 +1,10 @@
+( if
+( or
+( contains ( window_class) "discord" )
+( contains ( window_class) "urxvt" )
+)
+( begin
+( spawn_async (str "transset-df -i " (window_xid) " 0.95"))
+)
+)
+

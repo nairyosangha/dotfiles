@@ -1,0 +1,5 @@
+--abort-on-unavailable-fragment
+-f bestvideo[height<=1080]+bestaudio/best[height<=1080]
+--merge-output-format mkv
+--user-agent "Mozilla/5.0 (Windows NT 6.1; rv:52.0) Gecko/20100101 Firefox/52.0"
+--add-metadata
