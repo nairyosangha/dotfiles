@@ -41,6 +41,7 @@ alias reload='source ~/.bashrc && reset'
 alias gd='cd ~/Dev/'
 alias lf='lfrun'
 alias 4c='scrapeThread.py'
+alias abook='abook -C ~/.local/share/abook/addressbook'
 alias newsboat='newsboat -u ~/.local/share/newsboat/urls'
 alias mbsync='mbsync -c ~/.config/mbsyc/mbsyncrc'
 
