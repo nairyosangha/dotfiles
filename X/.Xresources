@@ -1,7 +1,7 @@
 URxvt.pointerBlank:		true
 URxvt.pointerBlankDelay:	1	
 URxvt.intensityStyles:		true
-!URxvt.depth:			32
+URxvt.depth:			32
 !URxvt.font: 			xft:osaka_unicode:pixelsize=15:autohint=true
 URxvt.font: 			xft:Misc Ohsnapu:pixelsize=13:antialias=false, xft:PT Mono:pixelsize=12:style=Regular, [codeset=JISX0208]xft:osaka_unicode:pixelsize=15:autohint=true
 URxvt.boldFont: 		xft:Misc Ohsnapu:pixelsize=13:style=Bold:antialias=false, xft:PT Mono:pixelsize=14:style=Bold, [codeset=JISX0208]xft:osaka_unicode:pixelsize=15:style=Bold

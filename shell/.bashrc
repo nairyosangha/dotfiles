@@ -16,6 +16,8 @@ alias lst='ls -tlc --color=auto'
 alias redshift='redshift -l $(curl ipinfo.io 2>/dev/null | jq -j .loc | tr ',' ':')'
 alias lastmod="mpcLastModified"
 alias sc='cd ~/.scripts && ls -hl'
+alias mpd="~/.scripts/runMPD.sh"
+alias lxc-console="sudo lxc-console -n vpn -t 0"
 alias mntdrs="~/.scripts/mountVirtDrives.sh"
 alias ncmpcpp='~/.scripts/queryRemoteServer.sh ncmpcpp'
 alias ncmpc='~/.scripts/queryRemoteServer.sh ncmpc'
@@ -61,6 +63,9 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 #export ZATHURA_PLUGINS_PATH=/usr/local/lib/zathura/
 export KUBECONFIG="$(find ~/.kube/configs/ -type f -printf "%p:" 2>/dev/null)$HOME/.kube/config"
 
+## MPD related settings
+export MPD_PORT=6600
+export MPD_HOST=Desktop
 ## XDG Base Directory Specification
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
@@ -82,6 +87,8 @@ export GOPATH=$HOME/Dev/go
 export GOARCH=amd64
 export GOOS=linux
 
+# Set default output device as the unplugged headphones port, since that's what my audio interface actually outputs to
+grep -q "MJ12" /etc/hostname && pactl set-sink-port alsa_output.pci-0000_0c_00.3.analog-stereo analog-output-headphones
 if [[ "$(tty)" = "/dev/tty1" ]]
 then
 	pgrep bspwm || startx
@@ -155,7 +162,7 @@ testUnicode() {
 testtext() {
 	while true
 	do
-		echo -e "One two three four 喜多郎  山崎ハコ  ゆらゆら帝国 白木秀雄 矢野顕子 福居良 lelelel \uf242\uf242\uf242\uf242"
+		echo -e "One two three four Пётр Ильич Чайковский 喜多郎  山崎ハコ  ゆらゆら帝国 白木秀雄 矢野顕子 福居良 lelelel \uf242\uf242\uf242\uf242"
 		sleep 1
 	done
 }

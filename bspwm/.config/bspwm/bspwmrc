@@ -36,12 +36,13 @@
 	bspc rule -a Steam  state=tiled follow=off
 	bspc rule -a keepassxc:* state=floating follow=on
 	bspc rule -a Waterfox desktop='^2'
+	bspc rule -a Discord:discord desktop='^3'
+	bspc rule -a Screenkey manage=off
+	bspc rule -a qBittorrent desktop='^8'
+	bspc rule -a soulseekqt desktop='^7'
+	bspc rule -a mpv desktop='^0' state=fullscreen follow=on
 	bspc rule -a Pulseeffects state=floating follow=on
 	bspc rule -a Zathura state=tiled follow=on
-	bspc rule -a Vivaldi-stable desktop='^2' follow=on
-	bspc rule -a discord desktop='^3' follow=on
-	bspc rule -a mpv desktop='^0' state=fullscreen follow=on
-
 
 	dunst &
 	acpid &
