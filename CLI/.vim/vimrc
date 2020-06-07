@@ -7,7 +7,17 @@ filetype on
 set runtimepath+=/usr/share/vim/
 syntax on
 
-call plug#begin('~/.vim/plugged')
+" Will try this again once coc supports storing the coc-settings file
+" somewhere else besides ~/.vim
+"
+" set undodir=$XDG_CACHE_HOME/vim/undo
+" set directory=$XDG_CACHE_HOME/vim/swap
+" set backupdir=$XDG_CACHE_HOME/vim/backup
+" set viewdir=$XDG_CACHE_HOME/vim/view
+" set viminfo+='1000,n$XDG_CACHE_HOME/vim/viminfo
+" set runtimepath=$XDG_CONFIG_HOME/vim,$VIMRUNTIME,$XDG_CONFIG_HOME/vim/autoload
+
+call plug#begin("~/.vim/plugged")
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'scrooloose/nerdtree'
 	Plug 'tpope/vim-surround'

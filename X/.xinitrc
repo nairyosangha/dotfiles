@@ -3,7 +3,7 @@
 # 
 
 # Merge Xresources files to get working colors in URxvt
-[ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
+[ -f ~/.config/Xresources ] && xrdb -merge ~/.config/Xresources
 [ -f ~/.cache/wal/colors.Xresources ] && xrdb -merge ~/.cache/wal/colors.Xresources
 
 [ "$XDG_CURRENT_DESKTOP" = "KDE" ] || [ "$XDG_CURRENT_DESKTOP" = "GNOME" ] || export QT_QPA_PLATFORMTHEME="qt5ct"

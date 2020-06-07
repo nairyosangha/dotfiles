@@ -44,6 +44,7 @@ alias 4c='scrapeThread.py'
 alias abook='abook --datafile ~/.local/share/abook/addressbook'
 alias newsboat='newsboat -u ~/.local/share/newsboat/urls'
 alias mbsync='mbsync -c ~/.config/mbsyc/mbsyncrc'
+alias gdot='cd ~/Dev/dotfiles'
 
 ## Custom keybinds
 bind -x '"\C-r"':"history | fzf +s --tac | cut -c 8- | bash -"
@@ -71,6 +72,11 @@ export MPD_HOST=Desktop
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
+## LESS
+export LESSHISTFILE="$HOME/.cache/lesshst"
+export LESSHISTSIZE=500
+## VIM (commented out until coc supports customizing config file path)
+## export VIMINIT='source $XDG_CONFIG_HOME/vim/vimrc'
 ## URXVT
 export RXVT_SOCKET="/tmp/urxvtd-$HOSTNAME"
 ## PASS
