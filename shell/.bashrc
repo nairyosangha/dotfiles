@@ -45,6 +45,7 @@ alias abook='abook --datafile ~/.local/share/abook/addressbook'
 alias newsboat='newsboat -u ~/.local/share/newsboat/urls'
 alias mbsync='mbsync -c ~/.config/mbsyc/mbsyncrc'
 alias gdot='cd ~/Dev/dotfiles'
+alias grep='grep --color'
 
 ## Custom keybinds
 bind -x '"\C-r"':"history | fzf +s --tac | cut -c 8- | bash -"
