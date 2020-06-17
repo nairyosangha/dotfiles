@@ -25,5 +25,7 @@
 	"command": "digestif",
 	"filetypes": ["tex", "plaintex", "context"]
       }
-    }
+    },
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true
   }
