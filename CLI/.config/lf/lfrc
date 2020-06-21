@@ -102,15 +102,15 @@ cmd zip ${{
 # custom mappings
 map zd set dirfirst!
 map uz :extract
-map ul !unzip -l $f | less
+map ul $uploadFile
 map R :reload
 map D :delete
 map - $~/.config/lf/draw_img.sh $f
-map M $mountVirtDrives
+map M $mountVirtDrives.sh; :reload
 
 # wallpaper commands
-map bg $ln -sf $f ~/.cache/wall.png && feh --bg-max ~/.cache/wall.png
-map bG $ln -sf $f ~/.cache/wall.png && feh --bg-fill ~/.cache/wall.png
+map bg $ln -sf $f ~/.cache/wall.png && feh --bg-max ~/.cache/wall.png && mv ~/.fehbg ~/.config/fehbg
+map bG $ln -sf $f ~/.cache/wall.png && feh --bg-fill ~/.cache/wall.png && mv ~/.fehbg ~/.config/fehbg
 map bw $wal -n -a 92 -i $f -o ~/.scripts/after_wall.sh
 
 map bi $beet import -m .
