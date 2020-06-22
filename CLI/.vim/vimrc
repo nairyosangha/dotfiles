@@ -37,6 +37,8 @@ call plug#end()
 " KEY REMAPPINGS
 inoremap jj <ESC>
 map <C-n> :NERDTreeToggle<CR>
+execute "set <M-n>=\en"
+nnoremap <M-n> :NERDTreeRefreshRoot<CR>
 nnoremap <Leader>o :FZF --bind=alt-k:up,alt-j:down<CR>
 " use diff tool to show changes between current version and saved version
 nnoremap <Leader>d :w !diff - %<CR>
