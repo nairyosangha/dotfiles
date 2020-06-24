@@ -43,7 +43,7 @@ alias lf='lfrun'
 alias 4c='scrapeThread.py'
 alias abook='abook --datafile ~/.local/share/abook/addressbook'
 alias newsboat='newsboat -u ~/.local/share/newsboat/urls'
-alias mbsync='mbsync -c ~/.config/mbsyc/mbsyncrc'
+alias mbsync='mbsync -c ~/.config/mbsync/mbsyncrc'
 alias gdot='cd ~/Dev/dotfiles'
 alias grep='grep --color'
 
@@ -82,9 +82,11 @@ export LESSHISTSIZE=500
 export RXVT_SOCKET="/tmp/urxvtd-$HOSTNAME"
 ## PASS
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store"
-export PASSWORD_STORE_KEY="$XDG_DATA_HOME/password-store/.gpg-id"
+export PASSWORD_STORE_KEY="$(cat $XDG_DATA_HOME/password-store/.gpg-id)"
 ## NOTMUCH
 export NOTMUCH_CONFIG="$XDG_CONFIG_HOME/notmuch/notmuch-config"
+## NPM
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 ## Lemonbar related settings
 export PANEL_FIFO=/tmp/panel-fifo
 export PANEL_HEIGHT=20
