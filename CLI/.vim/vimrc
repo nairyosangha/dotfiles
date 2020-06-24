@@ -14,7 +14,7 @@ syntax on
 " set directory=$XDG_CACHE_HOME/vim/swap
 " set backupdir=$XDG_CACHE_HOME/vim/backup
 " set viewdir=$XDG_CACHE_HOME/vim/view
-" set viminfo+='1000,n$XDG_CACHE_HOME/vim/viminfo
+set viminfo+='1000,n$XDG_CACHE_HOME/vim/viminfo
 " set runtimepath=$XDG_CONFIG_HOME/vim,$VIMRUNTIME,$XDG_CONFIG_HOME/vim/autoload
 
 call plug#begin("~/.vim/plugged")
