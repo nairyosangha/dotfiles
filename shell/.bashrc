@@ -223,3 +223,8 @@ switch_KB_layout() {
 	[[ $kbmap == "us" ]] && setxkbmap be && echo "keymap changed to be layout!" && return
 	setxkbmap us && echo "keymap changed to us layout!"
 }
+
+aur_uninstall() {
+	[[ -z $1 ]] && echo "Provide package name as argument!" && return
+	repo-remove /var/cache/pacman/custom/custom.db.tar "$1"
+}
