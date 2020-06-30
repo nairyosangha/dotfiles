@@ -47,13 +47,6 @@ alias mbsync='mbsync -c ~/.config/mbsync/mbsyncrc'
 alias gdot='cd ~/Dev/dotfiles'
 alias grep='grep --color'
 
-## Custom keybinds
-bind -x '"\C-r"':"history | fzf +s --tac | cut -c 8- | bash -"
-bind -x '"\C-f"':"URxvt_font_switcher.sh"
-bind -x '"\e[23~"':"bspc node -t ~fullscreen"
-bind -x '"\C-b"':"switch_KB_layout"
-bind -x '"\C-n"':"less < <(mpc; echo "--PLAYLIST--"; mpc playlist)"
-
 ## Export shell variables
 export PATH="$PATH:$HOME/.scripts:$HOME/.local/bin"
 export HISTCONTROL=ignoreboth:erasedups

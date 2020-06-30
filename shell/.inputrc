@@ -14,6 +14,13 @@ set show-mode-in-prompt on
 set vi-ins-mode-string \1\e[5 q\2
 set vi-cmd-mode-string \1\e[1 q\2
 
+# Custom keybinds
+"\C-r":"history | fzf +s --tac | cut -c 8- | bash -"
+"\C-f":"URxvt_font_switcher.sh"
+"\e[23~":"bspc node -t ~fullscreen"
+"\C-b":"switch_KB_layout"
+"\C-n":"less < <(mpc; echo "--PLAYLIST--"; mpc playlist)"
+
 $if Bash
 	Space: magic-space
 $endif
