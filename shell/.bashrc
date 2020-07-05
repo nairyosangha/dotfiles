@@ -80,13 +80,16 @@ export PASSWORD_STORE_KEY="$(cat $XDG_DATA_HOME/password-store/.gpg-id)"
 export NOTMUCH_CONFIG="$XDG_CONFIG_HOME/notmuch/notmuch-config"
 ## NPM
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+## GnuPG
+export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+export GPG_TTY="$(tty)"
 ## Lemonbar related settings
 export PANEL_FIFO=/tmp/panel-fifo
 export PANEL_HEIGHT=20
 export PANEL_FONT="-*-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
 export PANEL_WM_NAME=bspwm_panel
 ## go settings
-export GOPATH=$HOME/Dev/go
+export GOPATH=$HOME/.cache/go
 export GOARCH=amd64
 export GOOS=linux
 
