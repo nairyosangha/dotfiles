@@ -15,13 +15,13 @@ alias ls='ls --color=auto'
 alias lst='ls -tlc --color=auto'
 alias redshift='redshift -l $(curl ipinfo.io 2>/dev/null | jq -j .loc | tr ',' ':')'
 alias lastmod="mpcLastModified"
-alias sc='cd ~/.scripts && ls -hl'
-alias mpd="~/.scripts/runMPD.sh"
+alias sc='cd ~/Dev/scripts && ls -hl'
+alias mpd="source ~/Dev/scripts/runMPD.sh"
 alias lxc-console="sudo lxc-console -n vpn -t 0"
-alias mntdrs="~/.scripts/mountVirtDrives.sh"
-alias ncmpcpp='~/.scripts/queryRemoteServer.sh ncmpcpp'
-alias ncmpc='~/.scripts/queryRemoteServer.sh ncmpc'
-alias mpc="~/.scripts/queryRemoteServer.sh mpc"
+alias mntdrs="mountVirtDrives.sh"
+alias ncmpcpp='queryRemoteServer.sh ncmpcpp'
+alias ncmpc='queryRemoteServer.sh ncmpc'
+alias mpc="queryRemoteServer.sh mpc"
 alias mpvnv="mpv --no-video"
 alias pebg='nohup pulseeffects --gapplication-service >/dev/null &'
 alias yt='searchYouTubeVideo'
@@ -48,7 +48,7 @@ alias gdot='cd ~/Dev/dotfiles'
 alias grep='grep --color'
 
 ## Export shell variables
-export PATH="$PATH:$HOME/.scripts:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
 export HISTCONTROL=ignoreboth:erasedups
 export EDITOR="vim"
 export TERMINAL="urxvtc"
