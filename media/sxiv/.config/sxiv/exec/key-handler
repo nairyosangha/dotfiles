@@ -64,5 +64,17 @@ do
 			echo "$file"
 			mv "$file" /tmp/sxiv
 			;;
+		"b")
+			ln -sf $PWD/"$file" ~/.cache/wall.png
+			feh --bg-max ~/.cache/wall.png
+			mv ~/.fehbg ~/.config/fehbg
+			;;
+		"B")
+			ln -sf $PWD/"$file" ~/.cache/wall.png
+			feh --bg-fill ~/.cache/wall.png
+			mv ~/.fehbg ~/.config/fehbg
+			;;
+		"w")
+			wal -n -a 92 -i "$file" -o ~/.scripts/after_wall.sh
 	esac
 done
