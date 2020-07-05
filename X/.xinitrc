@@ -30,5 +30,4 @@ fcitx &
 pulseeffects --gapplication-service &
 
 # Start WM/DE of choice
-bar &
 exec bspwm
