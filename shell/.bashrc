@@ -222,5 +222,5 @@ switch_KB_layout() {
 
 aur_uninstall() {
 	[[ -z $1 ]] && echo "Provide package name as argument!" && return
-	repo-remove /var/cache/pacman/custom/custom.db.tar "$1"
+	repo-remove /var/cache/pacman/custom/custom.db.tar.gz "$1"
 }

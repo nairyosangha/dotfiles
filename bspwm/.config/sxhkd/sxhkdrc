@@ -18,7 +18,7 @@ super + shift + Tab
 	rofi -show window
 
 super + {_,shift} + n
-	urxvtc -e {~/.scripts/queryRemoteServer.sh ncmpc, /usr/bin/ncmpc -h pi}
+	urxvtc -e {queryRemoteServer.sh ncmpc, /usr/bin/ncmpc -h pi}
 
 super + ctrl + n
 	webclient
