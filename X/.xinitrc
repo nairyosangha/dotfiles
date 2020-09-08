@@ -19,7 +19,7 @@ xset r rate 300 25
 # Applications to run in the background
 grep -q "MJ12" /etc/hostname && pgrep mpd &>/dev/null || mpd &
 devilspie -a &
-picom &
+picom --vsync-use-glfinish &
 urxvtd -q -o -f
 sxhkd -t 1 &
 redshift &
