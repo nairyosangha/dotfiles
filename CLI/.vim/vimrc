@@ -71,7 +71,11 @@ let g:solarized_termcolor=256
 
 " SETTINGS FOR SPECIFIC FILETYPES
 autocmd FileType yaml setlocal tabstop=2
+autocmd FileType html setlocal tabstop=2
+autocmd FileType html setlocal shiftwidth=2
+autocmd FileType html setlocal foldmethod=indent
 autocmd FileType python setlocal tabstop=4
+autocmd FileType python setlocal foldmethod=indent
 autocmd FileType plaintex,tex setlocal spell
 autocmd FileType markdown setlocal spell
 
