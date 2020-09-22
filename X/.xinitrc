@@ -25,9 +25,8 @@ sxhkd -t 1 &
 redshift &
 unclutter -idle 6 &
 fcitx &
-#nm-applet &
-#blueman-applet &
-pulseeffects --gapplication-service &
+numlockx &
+nm-applet &
 
 # Start WM/DE of choice
 exec bspwm
