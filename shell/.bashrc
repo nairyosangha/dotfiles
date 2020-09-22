@@ -95,16 +95,16 @@ export GOOS=linux
 
 # Set default output device as the unplugged headphones port, since that's what my audio interface actually outputs to
 grep -q "MJ12" /etc/hostname && pactl set-sink-port alsa_output.pci-0000_0c_00.3.analog-stereo analog-output-headphones
+
+gpg-connect-agent updatestartuptty /bye &>/dev/null
 if [[ "$(tty)" = "/dev/tty1" ]]
 then
 	pgrep bspwm || startx
 fi
 
-if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-    ssh-agent > "$XDG_RUNTIME_DIR/ssh-agent.env"
-fi
-if [[ ! "$SSH_AUTH_SOCK" ]]; then
-    eval "$(<"$XDG_RUNTIME_DIR/ssh-agent.env")" &>/dev/null
+unset SSH_AGENT_PID
+if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
+  export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 fi
 
 
