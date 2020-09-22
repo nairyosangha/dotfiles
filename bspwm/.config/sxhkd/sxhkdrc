@@ -18,7 +18,7 @@ super + shift + Tab
 	rofi -show window
 
 super + {_,shift} + n
-	urxvtc -e {queryRemoteServer.sh ncmpc, /usr/bin/ncmpc -h pi}
+	urxvtc -e {queryRemoteServer.sh ncmpcpp, /usr/bin/ncmpcpp -h pi}
 
 super + ctrl + n
 	webclient
@@ -118,7 +118,7 @@ super + {p,b,comma,period}
 
 # focus the next/previous node in the current desktop
 super + {_,shift + }c
-	bspc node -f {next,prev}.local
+	bspc node -f {next,prev}.local.!hidden.window
 
 # focus the next/previous desktop in the current monitor
 super + bracket{left,right}

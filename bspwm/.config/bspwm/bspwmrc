@@ -5,7 +5,7 @@
 #	rm "$BSPWM_STATE"
 #	rm "$BSPWM_STATE.tmp"
 #else
-	bspwm_updateMonitors.sh
+	bspwm_updateMonitors.sh -c
 	#if (( "$(xrandr --listactivemonitors | head -n 1 | cut -d" " -f2)" == 1 ))
 	#then
 	#	bspc monitor -d I II III IV V VI VII VIII IX X
