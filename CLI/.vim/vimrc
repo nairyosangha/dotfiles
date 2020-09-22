@@ -27,6 +27,7 @@ call plug#begin("~/.vim/plugged")
 	Plug 'junegunn/fzf'
 	Plug 'junegunn/goyo.vim'
 	Plug 'airblade/vim-gitgutter'
+	Plug 'kovetskiy/sxhkd-vim'
 	" colorschemes
 	Plug 'haishanh/night-owl.vim'
 	Plug 'Rigellute/shades-of-purple.vim'
