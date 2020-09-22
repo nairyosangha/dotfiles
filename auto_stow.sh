@@ -1,4 +1,6 @@
 #!/bin/bash
+# command to delete all files stow complains about:
+#  ./auto_stow.sh 2>&1 | grep '*' | cut -d':' -f2 | tr -d ' ' | xargs -I{} rm "${HOME}/{}"
 
 cmd='stow -t'
 while getopts 'd' opt; do
