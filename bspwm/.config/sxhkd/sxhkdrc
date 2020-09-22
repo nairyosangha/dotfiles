@@ -219,13 +219,13 @@ ctrl + alt + k
 # XF86 Keys
 # Use xev to find the XF86 names
 super + ^248
-	~/.scripts/audioVol toggle
+	audioVol toggle
 XF86AudioMute 
-	~/.scripts/audioVol toggle
+	audioVol toggle
 XF86AudioLowerVolume
-	~/.scripts/audioVol down
+	audioVol down
 XF86AudioRaiseVolume
-	~/.scripts/audioVol up
+	audioVol up
 XF86AudioNext
 	queryRemoteServer.sh mpc next
 XF86AudioPrev
@@ -239,10 +239,10 @@ XF86TouchpadToggle
 XF86ScreenSaver
 	DISPLAY=:0 xset dpms force off
 XF86MonBrightnessDown
-	sudo ~/.scripts/brightness_down.sh
+	sudo brightness_down.sh
 XF86MonBrightnessUp
-	sudo ~/.scripts/brightness_up.sh
+	sudo brightness_up.sh
 XF86KbdBrightnessDown
-	sudo ~/.scripts/kbd_brightness_down.sh
+	sudo kbd_brightness_down.sh
 XF86KbdBrightnessUp
-	sudo ~/.scripts/kbd_brightness_up.sh
+	sudo kbd_brightness_up.sh

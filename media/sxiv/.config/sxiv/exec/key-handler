@@ -75,6 +75,6 @@ do
 			mv ~/.fehbg ~/.config/fehbg
 			;;
 		"w")
-			wal -n -a 92 -i "$file" -o ~/.scripts/after_wall.sh
+			wal -n -a 92 -i "$file" -o after_wall.sh
 	esac
 done
