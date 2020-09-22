@@ -116,18 +116,17 @@ map bw $wal -n -a 92 -i $f -o ~/.scripts/after_wall.sh
 map bi $beet import -m .
 
 # bookmarks
-map gM cd /media
-map gm cd /mnt
-map gP cd ~/Dev
+map g/ cd /
+map gd cd ~/Dev
 map gv cd ~/Videos
-map gs cd ~/School
+map gs cd /data
 map gp cd ~/Pictures
-map ga cd ~/Music
-map gD cd ~/Downloads
-map gd cd ~/Documents
+map gm cd ~/Music
+map gl cd ~/Downloads
+map gt cd ~/Desktop
 
 # previews
-#set previewer ~/.config/lf/pv.sh
+set previewer ~/.config/lf/pv.sh
 
 # sorting
 map st :{{ set sortby time; set reverse; set info time; }}
