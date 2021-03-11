@@ -209,11 +209,15 @@ ctrl + alt + k
 
 # Take screenshots
 {_,super, shift}  + @Print
+	folder="$(xdg-user-dir SCREENSHOTS)"; \
 	fileName="$(date +%Y-%m-%d_%H:%M:%S).png"; \
 	maim -u -f png -m 4 {_,-s, -i $(xdotool getactivewindow)} | tee \
 		>(xclip -i -selection clipboard -t image/png) \
-		> ~/Pictures/screenshots/"$fileName"; \
-	if ! [[ -s ~/Pictures/screenshots/"$fileName" ]]; then rm ~/Pictures/screenshots/"$fileName"; fi
+		> "${folder}${fileName}"; \
+	if ! [[ -s "${folder}${fileName}" ]]; then rm "${folder}${fileName}"; fi
+
+ctrl + Print
+	ls -t "$(xdg-user-dir SCREENSHOTS)"* | head -n1 | tr -d '\n' | xclip -sel c
 
 #
 # XF86 Keys
