@@ -14,6 +14,12 @@ if [[ $mime_type != image/* ]]; then
     exit
 fi
 
+if ! pgrep X >/dev/null; then
+	cacaview "$1"
+	exit
+fi
+
+
 w3m_paths=(/usr/{local/,}{lib,libexec,lib64,libexec64}/w3m/w3mi*)
 read -r w3m _ < <(type -p w3mimgdisplay "${w3m_paths[@]}")
 read -r LINES COLUMNS < <(stty size)
