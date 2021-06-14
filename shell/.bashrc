@@ -37,6 +37,7 @@ alias stc='systemctl'
 alias tray='runTray'
 alias gcp='git cherry-pick'
 alias gco='git checkout'
+alias gap='git add --all --patch'
 alias reload='source ~/.bashrc && reset'
 alias gd='cd ~/Dev/'
 alias 4c='scrapeThread.py'
@@ -93,6 +94,7 @@ export GOARCH=amd64
 export GOOS=linux
 
 # Set default output device as the unplugged headphones port, since that's what my audio interface actually outputs to
+# TODO this should be in the pulse config file on relevant machine
 grep -q "MJ12" /etc/hostname && pactl set-sink-port alsa_output.pci-0000_0c_00.3.analog-stereo analog-output-headphones
 
 gpg-connect-agent updatestartuptty /bye &>/dev/null
@@ -106,6 +108,7 @@ if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
   export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 fi
 
+source ~/.config/user-dirs.dirs
 
 ## Custom Commands
 calculateScript() {
@@ -221,5 +224,5 @@ switch_KB_layout() {
 
 aur_uninstall() {
 	[[ -z $1 ]] && echo "Provide package name as argument!" && return
-	repo-remove /var/cache/pacman/custom/custom.db.tar.gz "$1"
+	repo-remove /var/cache/pacman/custom/custom.db.tar "$1"
 }
