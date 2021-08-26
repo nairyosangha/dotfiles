@@ -78,6 +78,7 @@ autocmd FileType python setlocal tabstop=4
 autocmd FileType python setlocal foldmethod=indent
 autocmd FileType plaintex,tex setlocal spell
 autocmd FileType markdown setlocal spell
+autocmd FileType lua setlocal foldmethod=indent
 
 hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
 hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white 
