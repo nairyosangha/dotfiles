@@ -1,4 +1,3 @@
-set previewer ~/.config/lf/preview
 # interpreter for shell commands (needs to be POSIX compatible)
 set shell sh
 
@@ -131,7 +130,9 @@ map gl cd ~/Downloads
 map gt cd ~/Desktop
 
 # previews
-set previewer ~/.config/lf/pv.sh
+set previewer stpv
+set cleaner stpvimgclr
+&stpvimg --listen $id
 
 # sorting
 map st :{{ set sortby time; set reverse; set info time; }}
