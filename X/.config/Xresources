@@ -3,7 +3,7 @@ URxvt.pointerBlankDelay:	1
 URxvt.intensityStyles:		true
 URxvt.depth:			32
 !URxvt.font: 			xft:osaka_unicode:pixelsize=15:autohint=true
-URxvt.font: 			xft:Misc Ohsnapu:pixelsize=13:antialias=false, xft:PT Mono:pixelsize=12:style=Regular, [codeset=JISX0208]xft:osaka_unicode:pixelsize=15:autohint=true
+URxvt.font: 			xft:Misc Ohsnapu:pixelsize=13:antialias=false, xft:PT Mono:pixelsize=12:style=Regular, [codeset=JISX0208]xft:osaka_unicode:pixelsize=15:autohint=0
 URxvt.boldFont: 		xft:Misc Ohsnapu:pixelsize=13:style=Bold:antialias=false, xft:PT Mono:pixelsize=14:style=Bold, [codeset=JISX0208]xft:osaka_unicode:pixelsize=15:style=Bold
 !URxvt.letterSpace:		-1
 URxvt.scrollBar:		false
@@ -41,11 +41,13 @@ st.keysym.C-plus:		resize-font:bigger
 st.keysym.C-equal:		resize-font:reset
 st.keysym.C-question:		resize-font:show
 
-Xft.hinting:		true
-Xft.hintstyle:		hintslight
-Xft.antialias:		true
-Xft.rgba:		rgb
-Xft.dpi:		96
+Xft.antialias:	1
+Xft.autohint:	0
+Xft.dpi:	96
+Xft.hinting:	1
+Xft.hintstyle:	hintslight
+Xft.lcdfilter:	lcddefault
+Xft.rgba:	none
 
 rofi.color-enabled:	true
 rofi.color-window:	#000, #000, #000
